@@ -71,7 +71,8 @@ public class Group implements Voenkom {
 	public void toCsv() throws FileNotFoundException{
 		
 		pw=new PrintWriter(new File("tesw.csv"));
-		for(int i=0;i<groupList.length;i++) {
+		int i;
+		for(i=0;i<groupList.length;i++) {
 			if(groupList[i]!=null) {
 		 sb= new StringBuilder().append(groupList[i]);
 		 sb.append('\n');

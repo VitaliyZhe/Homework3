@@ -1,5 +1,4 @@
 package homework3;
-
 public class Human {
 
 	private String firstName;
@@ -29,10 +28,11 @@ public class Human {
 	}
 
 	public void setFirstName(String firstName) {
-
-		this.firstName = firstName;
-		;
-
+		
+			this.firstName = firstName;;
+        
+        
+		
 	}
 
 	public String getLastName() {
@@ -53,7 +53,7 @@ public class Human {
 			this.age = age;
 		} else {
 			System.out.println("Incorrectly entered age");
-
+			
 		}
 
 	}

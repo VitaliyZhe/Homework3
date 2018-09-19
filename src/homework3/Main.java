@@ -1,14 +1,17 @@
 package homework3;
 
+import java.io.FileNotFoundException;
+
 import java.util.Arrays;
 
 import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		Student st = new Student();
 		Scanner scanner = new Scanner(System.in);
+
 		GroupNull noNull = new GroupNull();
 		Group group123 = new Group("group123");
 		group123.addGroup((new Student("Petia", "Pupkin", 23, 71, 180, true, 4, 9)));
@@ -28,6 +31,7 @@ public class Main {
 			System.out.println("5- Sorting Age");
 			System.out.println("6- Sorting Last Name");
 			System.out.println("7- Go Army");
+			System.out.println("8- Output data to excel");
 
 			switch (scanner.nextInt()) {
 
@@ -50,6 +54,7 @@ public class Main {
 
 				noNull.sortArrayNull(group123.getGroupList());
 				group123.groupInfo();
+				group123.toCsv();
 				break;
 			case 5:
 				try {
@@ -81,6 +86,10 @@ public class Main {
 				break;
 			case 7:
 				group123.getStudentValidForArmy();
+				break;
+			case 8:
+				noNull.sortArrayNull(group123.getGroupList());
+				group123.toCsv();
 				break;
 			}
 

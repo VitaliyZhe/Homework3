@@ -1,5 +1,7 @@
 package homework3;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,6 +10,8 @@ public class Group implements Voenkom {
 	private String groupName;
 	private Student[] groupList = new Student[10];
 	private Student[] goArmy;
+	private PrintWriter pw ;
+	private StringBuilder sb ;
 	private String findName;
 
 	public Group(String groupName) {
@@ -63,6 +67,21 @@ public class Group implements Voenkom {
 			System.out.println(st);
 		}
 	}
+	
+	public void toCsv() throws FileNotFoundException{
+		
+		pw=new PrintWriter(new File("tesw.csv"));
+		for(int i=0;i<groupList.length;i++) {
+			if(groupList[i]!=null) {
+		 sb= new StringBuilder().append(groupList[i]);
+		 sb.append('\n');
+		 pw.write(sb.toString());
+			}
+		}
+		pw.close();
+	     System.out.println("test.csv");
+		
+	}
 
 	public void delStudent() {
 		int i;
@@ -109,7 +128,7 @@ public class Group implements Voenkom {
 
 		goArmy = new Student[number];
 		int calc = 0;
-		System.out.println(goArmy.length + "People will go to the army");
+		System.out.println(goArmy.length+"People will go to the army");
 
 		for (Student ss : groupList) {
 			if (ss != null && ss.getAge() >= 18 && ss.getSex() == true) {
@@ -118,7 +137,7 @@ public class Group implements Voenkom {
 			}
 		}
 		for (Student st : goArmy) {
-			System.out.println("Welcome to  army:" + st);
+			System.out.println("Welcome to  army:"+st);
 		}
 	}
 }

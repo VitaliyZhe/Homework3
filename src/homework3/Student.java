@@ -1,5 +1,4 @@
 package homework3;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -124,7 +123,7 @@ public class Student extends Human implements AddStudent {
 			try {
 				System.out.println("Set student cource 1-5");
 				int cource = scanner.nextInt();
-
+				
 				if (cource >= 1 && cource < 6) {
 					student.setCourse(cource);
 					i = false;
@@ -132,8 +131,9 @@ public class Student extends Human implements AddStudent {
 					throw new MyException();
 				}
 			}
-
-			catch (MyException | InputMismatchException e) {
+			
+			
+			catch (MyException |InputMismatchException e) {
 				System.out.println(e.getMessage());
 			}
 		}
